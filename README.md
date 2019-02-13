@@ -34,7 +34,7 @@ scanner := &scanner.GScanner{ Input: input,
 
 
   
-  The output would be:
+  The output would be: 
 
 ```[(, 28, +, 32, +, 11, -, 9E12, +, sin, (, 3.2E9/, cos, (, -, 3, ), ), -, sin, sinh, (, 5, ), +, sinh, (, 8, )]```
 
