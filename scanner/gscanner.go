@@ -21,7 +21,7 @@ func (cs *GScanner) Scan() []string {
 
 	parse := make([]string, 0)
 
-	sort.Sort(lengthWise(cs.Tokens))
+	sort.Sort(lengthWise(cs.Tokens)) //sort tokens by length.. the longer appear before the shorter
 
 	for i := 0; i < len(in); i++ {
 
