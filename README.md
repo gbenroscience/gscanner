@@ -24,7 +24,7 @@ the sort function as appropriate.
 
 
 
-# Example
+ ## Example
 
 A beautiful example usage would be for scanning an arithmetic expression or other expression into a form wherein the input tokens are very visible:
 
