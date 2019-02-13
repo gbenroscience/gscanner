@@ -2,15 +2,7 @@
 
 This is a simple Golang library that helps you quickly scan a string and split it into 
 substrings based on an array of supplied tokens.
-
-Use case:
-
-<b>
-  You have a string containing input that your code needs to
-  
-  
-  </b>
-
+ 
 This library benchmarks very fast and is stable.
 
 There are times when you either can do without the overhead of regular expressions, or the tokens required to 
