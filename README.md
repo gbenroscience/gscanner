@@ -38,7 +38,10 @@ scanner := &scanner.GScanner{ Input: input,
 
   The output would be:
   
-  ```[(, 28, +, 32, +, 11, -, 9E12, +, sin, (, 3.2E9/, cos, (, -, 3, ), ), -, sin, sinh, (, 5, ), +, sinh, (, 8, )]```
+  
+  ```golang
+   [(, 28, +, 32, +, 11, -, 9E12, +, sin, (, 3.2E9/, cos, (, -, 3, ), ), -, sin, sinh, (, 5, ), +, sinh, (, 8, )]
+   ```
 
 
 
@@ -46,17 +49,21 @@ scanner := &scanner.GScanner{ Input: input,
 
 The square braces and the commas are just for formatting.
 
-If you set ```IncludeTokensInOutput``` to false by doing this:
+If you set ```golang IncludeTokensInOutput``` to false by doing this:
 
-	```scanner := &scanner.GScanner{
+	```golang
+	 scanner := &scanner.GScanner{
 		Input:                 input,
 		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos"},
 		IncludeTokensInOutput: false,
 	}```
   
   Then the output is:
+  
+ ```golang
 
 [28, 32, 11, 9E12, 3.2E9/, 3, 5, 8]
+```
 
 
 
