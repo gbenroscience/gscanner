@@ -55,7 +55,7 @@ IncludeTokensInOutput
 ``` 
 to false by doing this:
 
-	```golang
+```golang
 	 scanner := &scanner.GScanner{
 		Input:                 input,
 		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos"},
