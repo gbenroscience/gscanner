@@ -22,7 +22,8 @@ Else set it to false.
 
 A beautiful example usage would be for scanning an arithmetic expression or other expression into a form wherein the input tokens are very visible:
 
-<code>
+```
+golang
 input := "(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)" 
 	
 scanner := &scanner.GScanner{ Input: input, 
@@ -30,12 +31,13 @@ scanner := &scanner.GScanner{ Input: input,
 			      IncludeTokensInOutput: true, 
 			      }
 	arr:= scanner.Scan()
-</code>
+```
 	
 
 
 
   The output would be:
+  
   ```[(, 28, +, 32, +, 11, -, 9E12, +, sin, (, 3.2E9/, cos, (, -, 3, ), ), -, sin, sinh, (, 5, ), +, sinh, (, 8, )]```
 
 
