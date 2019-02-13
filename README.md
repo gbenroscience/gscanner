@@ -16,6 +16,12 @@ string. Whether you would love to retain the splitting tokens in the scanner's o
 Simply set the ```IncludeTokensInOutput``` property of your ```GScanner``` to true to retain the splitting tokens.
 Else set it to false.
 
+The most sensible way of implementing this scan is to prioritize the splitter-tokens by sorting them by length in descending order.
+So, longer tokens are first split out, and if they are not found, the consecutive shorter ones are.
+
+If you have other requirementss, modify the gscanner.go file and specify the priority order for scanning tokens by changing
+the sort function as appropriate.
+
 
 
 # Example
