@@ -49,8 +49,11 @@ scanner := &scanner.GScanner{ Input: input,
 
 The square braces and the commas are just for formatting.
 
-If you set ```golang 
-IncludeTokensInOutput``` to false by doing this:
+If you set 
+```golang 
+IncludeTokensInOutput
+``` 
+to false by doing this:
 
 	```golang
 	 scanner := &scanner.GScanner{
