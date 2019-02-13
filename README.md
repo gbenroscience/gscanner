@@ -60,7 +60,8 @@ to false by doing this:
 		Input:                 input,
 		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos"},
 		IncludeTokensInOutput: false,
-	}```
+	}
+	```
   
   Then the output is:
   
