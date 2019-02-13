@@ -61,14 +61,14 @@ to false by doing this:
 		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos"},
 		IncludeTokensInOutput: false,
 	}
-	```
+```
   
   Then the output is:
   
 ```golang
 [28, 32, 11, 9E12, 3.2E9/, 3, 5, 8]
-
 ```
+
 
 Enjoy!
 
