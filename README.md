@@ -22,21 +22,14 @@ Else set it to false.
 
 A beautiful example usage would be for scanning an arithmetic expression or other expression into a form wherein the input tokens are very visible:
 
+```input := "(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)" scanner := &scanner.GScanner{ Input: input, Tokens: []string{"-", "sin", "sinh", "+", "(", ")", "cos"}, IncludeTokensInOutput: true, } arr := scanner.Scan() ```
 
-	```input := "(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)"
 
-	scanner := &scanner.GScanner{
-		Input:                 input,
-		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos"},
-		IncludeTokensInOutput: true,
-	}
 
-	arr := scanner.Scan()
-  ```
   
   The output would be:
 
-[(, 28, +, 32, +, 11, -, 9E12, +, sin, (, 3.2E9/, cos, (, -, 3, ), ), -, sin, sinh, (, 5, ), +, sinh, (, 8, )]
+```[(, 28, +, 32, +, 11, -, 9E12, +, sin, (, 3.2E9/, cos, (, -, 3, ), ), -, sin, sinh, (, 5, ), +, sinh, (, 8, )]```
 
 The square braces and the commas are just for formatting.
 
