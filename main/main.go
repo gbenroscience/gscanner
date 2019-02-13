@@ -3,45 +3,35 @@ package main
 import (
 	"fmt"
 
-	"github.com/gbenroscience/customscanner/scanner"
+	"github.com/gbenroscience/gscanner/scanner"
 )
+
+func printArray(arr []string) {
+
+	numItems := len(arr)
+	fmt.Print("[")
+	for index, entry := range arr {
+		if index < numItems-1 {
+			fmt.Print(entry, ", ")
+		} else {
+			fmt.Print(entry, "]")
+		}
+
+	}
+}
 
 func main() {
 
-	input := "(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+" +
-		"(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)+zopmkdmekdekekdmekdmekdmekdmekdmekdmekdmekdmekdmekdmekmzopmkdmekdekekdmekdmekdmekdmekdmekdmekdmekdmekdmekdmekmzopmkdmekdekekdmekdmekdmekdmekdmekdmekdmekdmekdmekdmekm-zopmkdmekdekekdmekdmekdmekdmekdmekdmekdmekdmekdmekdmekmzopmkdmekdekekdmekdmekdmekdmekdmekdmekdmekdmekdmekdmekmzopmkdmekdekekdmekdmekdmekdmekdmekdmekdmekdmekdmekdmekm"
+	input := "(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)"
 
 	scanner := &scanner.GScanner{
 		Input:                 input,
-		Tokens:                []string{"-", "sin", "sinh", ""},
+		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos"},
 		IncludeTokensInOutput: true,
 	}
 
-	out := scanner.Scan()
+	arr := scanner.Scan()
 
-	fmt.Println(out, "len > ", len(out))
+	printArray(arr)
+
 }
