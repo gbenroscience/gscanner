@@ -1,4 +1,4 @@
-# gscanner
+# gscanner-go
 
 gscanner is a simple Golang library that helps you quickly scan a string and split it into 
 substrings based on an array of supplied tokens.
