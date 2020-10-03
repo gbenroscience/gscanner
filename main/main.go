@@ -26,7 +26,7 @@ func main() {
 
 	scanner := &scanner.GScanner{
 		Input:                 input,
-		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos"},
+		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos","/"},
 		IncludeTokensInOutput: true,
 	}
 
