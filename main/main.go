@@ -21,10 +21,9 @@ func printArray(arr []string) {
 
 func main() {
 
-	scan := scanner.NewScanner("(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)" ,
-		[]string{"-", "sin", "sinh", "+", "(", ")", "cos","/"},
+	scan := scanner.NewScanner("(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)",
+		[]string{"-", "sin", "sinh", "+", "(", ")", "cos", "/"},
 		true)
-
 
 	arr := scan.Scan()
 
