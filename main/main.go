@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 	"github.com/gbenroscience/gscanner/scanner"
 )
 
@@ -22,13 +21,12 @@ func printArray(arr []string) {
 
 func main() {
 
-	input := "(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)"
+	//input := "(28+32+11-9E12+sin(3.2E9/cos(-3))-sinsinh(5)+sinh(8)"
 
-	scanner := &scanner.GScanner{
-		Input:                 input,
-		Tokens:                []string{"-", "sin", "sinh", "+", "(", ")", "cos","/"},
-		IncludeTokensInOutput: true,
-	}
+/*	scan := &scanner.GScanner{
+
+	}*/
+
 
 	arr := scanner.Scan()
 

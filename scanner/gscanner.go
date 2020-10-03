@@ -5,42 +5,50 @@ import (
 	"sort"
 )
 
-//CustomScanner - The scanner
+//GScanner - The scanner
 type GScanner struct {
-	Input                 string
-	Tokens                []string
-	IncludeTokensInOutput bool
+	input  string
+	tokens []string
+	itio   bool
 }
 
 type lengthWise []string
 
+func NewScanner(input string, tokens []string, includeTokensInOutput bool) *GScanner {
+	scanner := &GScanner{
+		input:  input,
+		tokens: tokens,
+		itio:   includeTokensInOutput,
+	}
+	sort.Sort(lengthWise(scanner.tokens)) //sort tokens by length.. the longer appear before the shorter
+	return scanner
+}
+
 //Scan - Scans the input into simple tokens.
 func (cs *GScanner) Scan() []string {
 
-	in := cs.Input
+	in := cs.input
 
 	parse := make([]string, 0)
 
-	sort.Sort(lengthWise(cs.Tokens)) //sort tokens by length.. the longer appear before the shorter
-
 	for i := 0; i < len(in); i++ {
 
-		for _, token := range cs.Tokens {
+		for _, token := range cs.tokens {
 
-			strLen := len(token)
+			tokenLen := len(token)
 
-			if strLen > 0 && i+strLen <= len(in) { //Ignore zero length tokens
-				portion := in[i : i+strLen]
+			if tokenLen > 0 && i+tokenLen <= len(in) { //Ignore zero length tokens
+				portion := in[i : i+tokenLen]
 
 				if portion == token {
 					if i != 0 { //avoid empty spaces
 						parse = append(parse, in[0:i])
 					}
-					if cs.IncludeTokensInOutput {
+					if cs.itio {
 						parse = append(parse, token)
 					}
 					//in = in.substring(i + len)
-					in = in[i+strLen:]
+					in = in[i+tokenLen:]
 					i = -1
 					break
 				}
