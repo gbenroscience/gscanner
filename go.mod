@@ -1,3 +1,3 @@
 module github.com/gbenroscience/gscanner
 
-go 1.14
+go 1.24
